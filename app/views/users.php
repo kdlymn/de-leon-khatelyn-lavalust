@@ -13,7 +13,7 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
+            background: #febcdf;
             color: #3f4635;
         }
 
