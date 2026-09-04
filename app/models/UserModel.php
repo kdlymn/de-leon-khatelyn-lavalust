@@ -2,11 +2,11 @@
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 /**
- * Model: UserModel
+ * Model: Usermodel
  * 
  * Automatically generated via CLI.
  */
-class UserModel extends Model {
+class Usermodel extends Model {
     protected $table = 'users';
     protected $primary_key = 'id';
     protected $fillable = [];
