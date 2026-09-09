@@ -12,7 +12,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #f4f6f8;
+            background-color: #f4f6f8;
+            background-image: linear-gradient(rgba(15, 118, 110, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 110, .035) 1px, transparent 1px);
+            background-size: 32px 32px;
             color: #172033;
             min-height: 100vh;
         }
@@ -32,6 +34,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             color: #172033;
             font-weight: 700;
         }
+        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d99a3d; border-radius: 2px; }
         .nav { display: flex; gap: 12px; flex-wrap: wrap; }
         .nav a {
             text-decoration: none;
@@ -54,6 +57,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             padding: 28px;
             box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
+        .hero { border-top: 3px solid #0f766e; }
         .hero { margin-bottom: 18px; }
         .hero h1 {
             margin: 0 0 10px;
@@ -130,6 +134,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 <main class="page">
 <section class="hero">
+    <div style="color:#0f766e;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Workspace access</div>
     <h1>Welcome back</h1>
     <p>Sign in to manage your product inventory.</p>
 </section>

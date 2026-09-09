@@ -15,7 +15,9 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #f4f6f8;
+            background-color: #f4f6f8;
+            background-image: linear-gradient(rgba(15, 118, 110, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 110, .035) 1px, transparent 1px);
+            background-size: 32px 32px;
             color: #1f2937;
             min-height: 100vh;
         }
@@ -35,6 +37,7 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
             letter-spacing: .14em;
             text-transform: uppercase;
         }
+        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d99a3d; border-radius: 2px; }
         .nav { display: flex; gap: 12px; flex-wrap: wrap; }
         .nav a {
             color: #1f2937;
@@ -56,6 +59,7 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
             padding: 30px 28px;
             box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
+        .hero { border-top: 3px solid #0f766e; }
         .hero { margin-bottom: 18px; }
         .hero h1 {
             margin: 0 0 10px;
@@ -124,6 +128,7 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
 
 <main class="page">
 <section class="hero">
+    <div style="color:#0f766e;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Inventory workspace</div>
     <h1><?= $is_edit ? 'Update product' : 'Add a product'; ?></h1>
     <p><?= $is_edit ? 'Keep the product inventory details current.' : 'Add a new item to the product inventory.'; ?></p>
 </section>

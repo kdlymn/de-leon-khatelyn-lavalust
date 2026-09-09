@@ -14,7 +14,9 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #f4f6f8;
+            background-color: #f4f6f8;
+            background-image: linear-gradient(rgba(15, 118, 110, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 110, .035) 1px, transparent 1px);
+            background-size: 32px 32px;
             color: #1f2937;
             min-height: 100vh;
         }
@@ -35,6 +37,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             letter-spacing: .14em;
             text-transform: uppercase;
         }
+        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d99a3d; border-radius: 2px; }
         .nav { display: flex; gap: 12px; flex-wrap: wrap; }
         .nav a {
             color: #1f2937;
@@ -51,6 +54,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             border-radius: 12px;
             box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
+        .hero { border-top: 3px solid #0f766e; }
         .hero { padding: 30px 28px; margin-bottom: 18px; }
         .hero h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 4vw, 2.5rem); color: #172033; letter-spacing: -.02em; }
         .hero p { margin: 0; color: #627083; font-size: 1rem; }
@@ -83,9 +87,9 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         .panel-title { color: #172033; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: .85rem 1.1rem; text-align: left; font-size: .9rem; }
-        th { background: #faf7ed; color: #777363; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid #e1d8c3; }
-        tbody tr:nth-child(even) { background: #fffdf8; }
-        tbody tr:hover { background: #fff7f4; }
+        th { background: #f0f4f6; color: #536174; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid #dfe6ec; }
+        tbody tr:nth-child(even) { background: #fbfcfd; }
+        tbody tr:hover { background: #f1f8f7; }
         td { border-bottom: 1px solid #e8edf2; color: #263247; }
         td.desc { max-width: 260px; color: #627083; }
         td.numeric { text-align: right; white-space: nowrap; }
@@ -111,6 +115,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 
 <main class="page">
     <section class="hero">
+        <div style="color:#0f766e;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Inventory workspace</div>
         <h1>Product inventory</h1>
         <p>Manage products and keep your inventory details up to date.</p>
     </section>
