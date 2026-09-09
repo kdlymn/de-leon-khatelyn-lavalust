@@ -8,83 +8,155 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Product Manager</title>
+    <title>Products | Student Portal</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #f4f7fb 0%, #e8edf5 100%);
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #febcdf;
             color: #1f2937;
             min-height: 100vh;
-            padding: 2.5rem 1.5rem;
         }
-        .wrap { max-width: 1000px; margin: 0 auto; }
         .topbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            margin-bottom: 1.5rem;
             flex-wrap: wrap;
+            background: #fe9bcf;
+            border-bottom: 1px solid rgba(15, 23, 42, .06);
+            padding: 18px 28px;
         }
-        h1 { font-size: 1.6rem; }
-        .actions { display: flex; gap: .6rem; align-items: center; }
+        .brand {
+            font-size: .8rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #4b5563;
+            font-weight: 700;
+        }
+        .nav { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .nav a {
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 999px;
+            transition: background .2s ease;
+        }
+        .nav a:hover { background: #5a826d; }
+        .page {
+            max-width: 1100px;
+            margin: 42px auto;
+            padding: 0 18px 40px;
+        }
+        .hero {
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, .06);
+            border-radius: 26px;
+            padding: 32px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, .04);
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -.04em;
+            color: #111827;
+        }
+        .hero p { margin: 0; color: #6b7280; font-size: 1rem; }
+        .actions { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
         .btn {
             display: inline-block;
-            padding: .55rem 1rem;
-            border-radius: 8px;
+            padding: .65rem 1rem;
+            border-radius: 10px;
             font-size: .85rem;
             font-weight: 600;
             text-decoration: none;
             border: none;
             cursor: pointer;
         }
-        .btn-primary { background: #2563eb; color: #fff; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-muted { background: #e5e7eb; color: #1f2937; }
-        .btn-muted:hover { background: #d1d5db; }
-        .btn-danger { background: #dc2626; color: #fff; }
-        .btn-danger:hover { background: #b91c1c; }
+        .btn-primary { background: #5a826d; color: #fff; }
+        .btn-primary:hover { background: #486b59; }
+        .btn-muted { background: #f3f4f6; color: #1f2937; }
+        .btn-muted:hover { background: #e5e7eb; }
+        .btn-danger { background: #9c4c3e; color: #fff; }
+        .btn-danger:hover { background: #803d33; }
         .btn-sm { padding: .4rem .75rem; font-size: .8rem; }
-        .msg { padding: .7rem .9rem; border-radius: 8px; font-size: .85rem; margin-bottom: 1.25rem; }
-        .msg.success { background: #dcfce7; color: #166534; }
+        .msg { padding: .75rem .9rem; border-radius: 10px; font-size: .85rem; margin-bottom: 1.25rem; }
+        .msg.success { background: #e3f1e6; color: #356247; }
         .msg.error { background: #fee2e2; color: #991b1b; }
         .panel {
             background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(15, 23, 42, .06);
+            border-radius: 22px;
+            padding: 24px 22px;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, .03);
             overflow: hidden;
         }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: .85rem 1.1rem; text-align: left; font-size: .9rem; }
-        th { background: #2563eb; color: #fff; font-weight: 600; }
-        tbody tr:nth-child(even) { background: #f8fafc; }
-        tbody tr:hover { background: #eef2ff; }
-        td { border-bottom: 1px solid #f1f5f9; }
-        td.desc { max-width: 260px; color: #4b5563; }
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; min-width: 780px; border-collapse: collapse; }
+        th, td { padding: .9rem 1rem; text-align: left; font-size: .9rem; }
+        th {
+            background: #faf7ed;
+            color: #777363;
+            font-size: .72rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-bottom: 1px solid #e1d8c3;
+        }
+        tbody tr:nth-child(even) { background: #fffdf8; }
+        tbody tr:hover { background: #fff7f4; }
+        td { border-bottom: 1px solid #f1ece1; color: #394536; }
+        td.desc { max-width: 260px; color: #777363; }
         td.numeric { text-align: right; white-space: nowrap; }
         .row-actions { display: flex; gap: .5rem; }
         .empty { padding: 2rem; text-align: center; color: #6b7280; }
         form.inline { display: inline; }
+        @media (max-width: 600px) {
+            .topbar { padding: 16px 18px; align-items: flex-start; flex-direction: column; }
+            .brand { width: 100%; }
+            .page { margin: 24px auto; }
+            .hero, .panel { padding: 24px 20px; }
+            .actions { width: 100%; }
+        }
     </style>
 </head>
 <body>
-<div class="wrap">
-    <div class="topbar">
-        <h1>Products</h1>
-        <div class="actions">
-            <span style="font-size:.85rem;color:#6b7280;">
-                Signed in as <strong><?= htmlspecialchars($_SESSION['username'] ?? ''); ?></strong>
-                <?php if (!$is_admin): ?>
-                    <span style="background:#e5e7eb;color:#4b5563;padding:.15rem .5rem;border-radius:6px;font-size:.75rem;margin-left:.4rem;">view only</span>
-                <?php endif; ?>
-            </span>
+<div class="topbar">
+    <div class="brand">Student Portal</div>
+    <nav class="nav">
+        <a href="<?= base_url('student'); ?>">Home</a>
+        <a href="<?= base_url('student/profile'); ?>">Student Profile</a>
+        <a href="<?= base_url('logout'); ?>">Logout</a>
+    </nav>
+</div>
+
+<main class="page">
+    <section class="hero">
+        <h1>Product inventory</h1>
+        <p>Review available products and manage the inventory assigned to your portal.</p>
+    </section>
+
+    <section class="panel">
+        <div class="topbar" style="background: transparent; border: 0; padding: 0 0 20px;">
+            <div>
+                <div class="brand">Inventory records</div>
+                <div style="margin-top: 6px; color: #6b7280; font-size: .9rem;">
+                    Signed in as <strong><?= htmlspecialchars($_SESSION['username'] ?? ''); ?></strong>
+                    <?php if (!$is_admin): ?>
+                        <span style="background:#f3ead9;color:#5f5648;padding:.15rem .5rem;border-radius:6px;font-size:.75rem;margin-left:.4rem;">view only</span>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="actions">
             <?php if ($is_admin): ?>
                 <a class="btn btn-primary" href="<?= base_url('products/create'); ?>">+ Add Product</a>
             <?php endif; ?>
-            <a class="btn btn-muted" href="<?= base_url('logout'); ?>">Logout</a>
+            </div>
         </div>
-    </div>
 
     <?php if (!empty($success)): ?>
         <div class="msg success"><?= htmlspecialchars($success); ?></div>
@@ -93,7 +165,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         <div class="msg error"><?= htmlspecialchars($error); ?></div>
     <?php endif; ?>
 
-    <div class="panel">
+    <div class="table-wrap">
         <table>
             <thead>
                 <tr>
@@ -136,6 +208,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             </tbody>
         </table>
     </div>
-</div>
+    </section>
+</main>
 </body>
 </html>
