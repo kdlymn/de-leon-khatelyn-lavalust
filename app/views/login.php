@@ -11,14 +11,14 @@
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
             background-color: #fff4f7;
-            background-image: linear-gradient(rgba(194, 85, 122, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(194, 85, 122, .035) 1px, transparent 1px);
-            background-size: 32px 32px;
+            background-image: radial-gradient(circle at 12% 18%, rgba(218, 117, 148, .22), transparent 24%), radial-gradient(circle at 88% 82%, rgba(234, 177, 112, .16), transparent 22%), linear-gradient(135deg, rgba(255, 255, 255, .5), transparent 52%);
             color: #1f2937;
             min-height: 100vh;
         }
         .topbar {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e9ef;
+            background: rgba(255, 250, 252, .88);
+            border-bottom: 1px solid #f0dce3;
+            box-shadow: 0 4px 18px rgba(150, 64, 91, .05);
             padding: 18px 32px;
             display: flex;
             justify-content: space-between;
