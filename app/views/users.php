@@ -17,6 +17,42 @@
             color: #3f4635;
         }
 
+        .topbar {
+            background: #fe9bcf;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+            padding: 18px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand {
+            color: #4b5563;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #1f2937;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background: #5a826d;
+        }
+
         .container {
             width: 94%;
             max-width: 1400px;
@@ -151,6 +187,12 @@
         }
 
         @media (max-width: 600px) {
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 16px 18px;
+            }
+
             .container {
                 width: 98%;
                 border-width: 6px;
@@ -203,10 +245,18 @@
 </head>
 <body>
 
+<div class="topbar">
+    <div class="brand">Student Portal</div>
+    <nav class="nav">
+        <a href="<?= site_url('student'); ?>">Home</a>
+        <a href="<?= site_url('student/profile'); ?>">Student Profile</a>
+    </nav>
+</div>
+
 <div class="container">
     <div class="content">
         <div class="small-title">Registered Users</div>
-        <h1>Member Directory</h1>
+        <h1>Students Directory</h1>
 
         <div class="tools">
             <input class="search" type="text" placeholder="Search users...">
