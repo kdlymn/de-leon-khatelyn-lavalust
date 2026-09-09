@@ -12,16 +12,16 @@ class StudentController extends Controller
     {
         
         $data = [
-            'student_id' => '2024-00143',
-            'name'       => 'Jayoffe Harvey A. Pascua',
+            'student_id' => '2024-00127',
+            'name'       => 'Khate Lyn M. De Leon',
             'course'     => 'BS Information Technology',
             'year'       => '3rd Year',
             'section'    => '3F3',
-            'email'      => 'jayoffepascua@gmail.com',
-            'skills'     => ['PHP', 'MySQL', 'HTML & CSS'],
-            'hobbies'    => ['Reading', 'Music', 'Gaming'],
-            'contact_number' => '0912 345 6789',
-            'address'    => 'Davao City, Philippines',
+            'email'      => 'khatelyn.deleon@gmail.com',
+            'skills'     => ['Video Editing', 'Content Creation', 'UI/UX Design'],
+            'hobbies'    => ['Watching Movies', 'Traveling', 'Exploring Something New'],
+            'contact_number' => '+6312 996 3316',
+            'address'    => 'Brgy. Subaan, Socorro, Oriental Mindoro, Philippines',
         ];
 
         $this->call->view('student_profile', $data);
