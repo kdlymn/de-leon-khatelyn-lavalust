@@ -10,8 +10,8 @@
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f4f6f8;
-            background-image: linear-gradient(rgba(15, 118, 110, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 110, .035) 1px, transparent 1px);
+            background-color: #fff4f7;
+            background-image: linear-gradient(rgba(194, 85, 122, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(194, 85, 122, .035) 1px, transparent 1px);
             background-size: 32px 32px;
             color: #1f2937;
             min-height: 100vh;
@@ -31,7 +31,7 @@
             color: #172033;
             font-weight: 700;
         }
-        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d99a3d; border-radius: 2px; }
+        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d28b55; border-radius: 2px; }
         .nav { display: flex; gap: 12px; flex-wrap: wrap; }
         .nav a {
             text-decoration: none;
@@ -41,7 +41,7 @@
             border-radius: 8px;
             transition: background .2s ease;
         }
-        .nav a:hover { background: #eef3f2; color: #0f766e; }
+        .nav a:hover { background: #fff0f4; color: #c2557a; }
         .page {
             max-width: 560px;
             margin: 64px auto;
@@ -54,7 +54,7 @@
             padding: 28px;
             box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
-        .hero { border-top: 3px solid #0f766e; }
+        .hero { border-top: 3px solid #c2557a; }
         .hero { margin-bottom: 18px; }
         .hero h1 {
             margin: 0 0 10px;
@@ -83,19 +83,19 @@
             font-size: .95rem;
             margin-bottom: 18px;
         }
-        input:focus { outline: none; border-color: #0f766e; box-shadow: 0 0 0 3px rgba(15, 118, 110, .1); }
+        input:focus { outline: none; border-color: #c2557a; box-shadow: 0 0 0 3px rgba(194, 85, 122, .1); }
         button {
             width: 100%;
             padding: 12px;
             border: 0;
             border-radius: 8px;
-            background: #0f766e;
+            background: #c2557a;
             color: #fff;
             cursor: pointer;
             font-size: .95rem;
             font-weight: 600;
         }
-        button:hover { background: #0b5f59; }
+        button:hover { background: #a94465; }
         .error {
             padding: 12px 14px;
             border-radius: 10px;
@@ -110,7 +110,7 @@
             font-size: .85rem;
             color: #627083;
         }
-        .footer-link a { color: #0f766e; text-decoration: none; font-weight: 600; }
+        .footer-link a { color: #c2557a; text-decoration: none; font-weight: 600; }
         @media (max-width: 600px) {
             .topbar { padding: 16px 20px; align-items: flex-start; flex-direction: column; }
             .brand { width: 100%; margin-bottom: 8px; }
@@ -129,7 +129,7 @@
 
 <main class="page">
     <section class="hero">
-        <div style="color:#0f766e;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Workspace access</div>
+        <div style="color:#c2557a;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Workspace access</div>
         <h1>Welcome back</h1>
         <p>Sign in to manage your product inventory.</p>
     </section>

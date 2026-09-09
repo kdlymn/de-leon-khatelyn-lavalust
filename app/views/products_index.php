@@ -14,8 +14,8 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f4f6f8;
-            background-image: linear-gradient(rgba(15, 118, 110, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 110, .035) 1px, transparent 1px);
+            background-color: #fff4f7;
+            background-image: linear-gradient(rgba(194, 85, 122, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(194, 85, 122, .035) 1px, transparent 1px);
             background-size: 32px 32px;
             color: #1f2937;
             min-height: 100vh;
@@ -37,7 +37,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             letter-spacing: .14em;
             text-transform: uppercase;
         }
-        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d99a3d; border-radius: 2px; }
+        .brand::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: #d28b55; border-radius: 2px; }
         .nav { display: flex; gap: 12px; flex-wrap: wrap; }
         .nav a {
             color: #1f2937;
@@ -46,7 +46,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             border-radius: 8px;
             text-decoration: none;
         }
-        .nav a:hover { background: #eef3f2; color: #0f766e; }
+        .nav a:hover { background: #fff0f4; color: #c2557a; }
         .page { max-width: 1100px; margin: 48px auto; padding: 0 20px 40px; }
         .hero, .panel {
             background: #fff;
@@ -54,7 +54,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             border-radius: 12px;
             box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
-        .hero { border-top: 3px solid #0f766e; }
+        .hero { border-top: 3px solid #c2557a; }
         .hero { padding: 30px 28px; margin-bottom: 18px; }
         .hero h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 4vw, 2.5rem); color: #172033; letter-spacing: -.02em; }
         .hero p { margin: 0; color: #627083; font-size: 1rem; }
@@ -69,8 +69,8 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             border: none;
             cursor: pointer;
         }
-        .btn-primary { background: #0f766e; color: #fff; }
-        .btn-primary:hover { background: #0b5f59; }
+        .btn-primary { background: #c2557a; color: #fff; }
+        .btn-primary:hover { background: #a94465; }
         .btn-muted { background: #f3f4f6; color: #1f2937; }
         .btn-muted:hover { background: #e5e7eb; }
         .btn-danger { background: #9c4c3e; color: #fff; }
@@ -115,7 +115,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 
 <main class="page">
     <section class="hero">
-        <div style="color:#0f766e;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Inventory workspace</div>
+        <div style="color:#c2557a;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;">Inventory workspace</div>
         <h1>Product inventory</h1>
         <p>Manage products and keep your inventory details up to date.</p>
     </section>
