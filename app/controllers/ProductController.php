@@ -66,7 +66,7 @@ class ProductController extends Controller
         $data['error'] = $_SESSION['flash_error'] ?? null;
         unset($_SESSION['flash_success'], $_SESSION['flash_error']);
 
-        $this->call->view('student_index', $data);
+        $this->call->view('products_index', $data);
     }
 
     /**
