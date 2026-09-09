@@ -8,7 +8,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Student Portal</title>
+    <title>Student Portal</title>
     <style>
         * { box-sizing: border-box; }
         body {
@@ -136,16 +136,16 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 
 <main class="page">
     <section class="hero">
-        <h1>Product inventory</h1>
-        <p>Review available products and manage the inventory assigned to your portal.</p>
+        <h1>Student Portal dashboard</h1>
+        <p>Manage the products and resources available to students in the portal.</p>
     </section>
 
     <section class="panel">
         <div class="topbar" style="background: transparent; border: 0; padding: 0 0 20px;">
             <div>
-                <div class="brand">Inventory records</div>
+                <div class="brand">Portal product records</div>
                 <div style="margin-top: 6px; color: #6b7280; font-size: .9rem;">
-                    Signed in as <strong><?= htmlspecialchars($_SESSION['username'] ?? ''); ?></strong>
+                    Portal account: <strong><?= htmlspecialchars($_SESSION['username'] ?? ''); ?></strong>
                     <?php if (!$is_admin): ?>
                         <span style="background:#f3ead9;color:#5f5648;padding:.15rem .5rem;border-radius:6px;font-size:.75rem;margin-left:.4rem;">view only</span>
                     <?php endif; ?>
@@ -153,7 +153,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             </div>
             <div class="actions">
             <?php if ($is_admin): ?>
-                <a class="btn btn-primary" href="<?= base_url('products/create'); ?>">+ Add Product</a>
+                <a class="btn btn-primary" href="<?= base_url('products/create'); ?>">+ Add Portal Product</a>
             <?php endif; ?>
             </div>
         </div>
@@ -202,7 +202,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr><td colspan="<?= $is_admin ? 7 : 6; ?>" class="empty">
-                        <?= $is_admin ? 'No products yet. Click "Add Product" to create one.' : 'No products yet.'; ?>
+                        <?= $is_admin ? 'No portal products yet. Click "Add Portal Product" to create one.' : 'No portal products yet.'; ?>
                     </td></tr>
                 <?php endif; ?>
             </tbody>
