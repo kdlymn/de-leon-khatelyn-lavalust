@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in | Student Portal</title>
+    <title>Sign in | Product Manager</title>
     <style>
         * { box-sizing: border-box; }
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #febcdf;
+            background: #f4f6f8;
             color: #1f2937;
             min-height: 100vh;
         }
         .topbar {
-            background: #fe9bcf;
-            border-bottom: 1px solid rgba(15, 23, 42, .06);
-            padding: 18px 28px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e9ef;
+            padding: 18px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -26,7 +26,7 @@
             font-size: .8rem;
             letter-spacing: .14em;
             text-transform: uppercase;
-            color: #4b5563;
+            color: #172033;
             font-weight: 700;
         }
         .nav { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -35,63 +35,63 @@
             color: #1f2937;
             font-weight: 600;
             padding: 10px 14px;
-            border-radius: 999px;
+            border-radius: 8px;
             transition: background .2s ease;
         }
-        .nav a:hover { background: #5a826d; }
+        .nav a:hover { background: #eef3f2; color: #0f766e; }
         .page {
-            max-width: 700px;
-            margin: 42px auto;
-            padding: 0 18px 40px;
+            max-width: 560px;
+            margin: 64px auto;
+            padding: 0 20px 40px;
         }
         .hero, .card {
             background: #fff;
-            border: 1px solid rgba(15, 23, 42, .06);
-            border-radius: 22px;
-            padding: 30px 28px;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, .04);
+            border: 1px solid #e3e8ee;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
         .hero { margin-bottom: 18px; }
         .hero h1 {
             margin: 0 0 10px;
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
             font-weight: 700;
-            letter-spacing: -.04em;
-            color: #111827;
+            letter-spacing: -.02em;
+            color: #172033;
         }
         .hero p { margin: 0; color: #6b7280; font-size: 1rem; }
-        .card { border-radius: 18px; }
+        .card { border-radius: 12px; }
         label {
             display: block;
             font-size: .72rem;
             letter-spacing: .08em;
             text-transform: uppercase;
-            color: #6b7280;
+            color: #627083;
             margin-bottom: 8px;
         }
         input {
             width: 100%;
             padding: 12px 14px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #fafafa;
-            color: #111827;
+            border: 1px solid #d9e0e8;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #172033;
             font-size: .95rem;
             margin-bottom: 18px;
         }
-        input:focus { outline: none; border-color: #5a826d; }
+        input:focus { outline: none; border-color: #0f766e; box-shadow: 0 0 0 3px rgba(15, 118, 110, .1); }
         button {
             width: 100%;
             padding: 12px;
             border: 0;
-            border-radius: 10px;
-            background: #5a826d;
+            border-radius: 8px;
+            background: #0f766e;
             color: #fff;
             cursor: pointer;
             font-size: .95rem;
             font-weight: 600;
         }
-        button:hover { background: #486b59; }
+        button:hover { background: #0b5f59; }
         .error {
             padding: 12px 14px;
             border-radius: 10px;
@@ -104,20 +104,20 @@
             text-align: center;
             margin-top: 1.25rem;
             font-size: .85rem;
-            color: #6b7280;
+            color: #627083;
         }
-        .footer-link a { color: #5a826d; text-decoration: none; font-weight: 600; }
+        .footer-link a { color: #0f766e; text-decoration: none; font-weight: 600; }
         @media (max-width: 600px) {
-            .topbar { padding: 16px 18px; align-items: flex-start; flex-direction: column; }
+            .topbar { padding: 16px 20px; align-items: flex-start; flex-direction: column; }
             .brand { width: 100%; margin-bottom: 8px; }
-            .page { margin: 24px auto; }
+            .page { margin: 32px auto; }
             .hero, .card { padding: 24px 20px; }
         }
     </style>
 </head>
 <body>
 <div class="topbar">
-    <div class="brand">Student Portal</div>
+    <div class="brand">Product Manager</div>
     <nav class="nav">
         <a href="<?= site_url('register'); ?>">Register</a>
     </nav>
@@ -126,7 +126,7 @@
 <main class="page">
     <section class="hero">
         <h1>Welcome back</h1>
-        <p>Sign in to continue to your student portal.</p>
+        <p>Sign in to manage your product inventory.</p>
     </section>
 
     <section class="card">

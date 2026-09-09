@@ -15,21 +15,21 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #febcdf;
+            background: #f4f6f8;
             color: #1f2937;
             min-height: 100vh;
         }
         .topbar {
-            background: #fe9bcf;
-            border-bottom: 1px solid rgba(15, 23, 42, .06);
-            padding: 18px 28px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e9ef;
+            padding: 18px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 16px;
         }
         .brand {
-            color: #4b5563;
+            color: #172033;
             font-size: .8rem;
             font-weight: 700;
             letter-spacing: .14em;
@@ -40,68 +40,68 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
             color: #1f2937;
             font-weight: 600;
             padding: 10px 14px;
-            border-radius: 999px;
+            border-radius: 8px;
             text-decoration: none;
         }
-        .nav a:hover { background: #5a826d; }
+        .nav a:hover { background: #eef3f2; color: #0f766e; }
         .page {
             max-width: 700px;
-            margin: 42px auto;
+            margin: 64px auto;
             padding: 0 18px 40px;
         }
         .hero, .card {
             background: #fff;
-            border: 1px solid rgba(15, 23, 42, .06);
-            border-radius: 22px;
+            border: 1px solid #e3e8ee;
+            border-radius: 12px;
             padding: 30px 28px;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, .04);
+            box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
         .hero { margin-bottom: 18px; }
         .hero h1 {
             margin: 0 0 10px;
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            letter-spacing: -.04em;
-            color: #111827;
+            letter-spacing: -.02em;
+            color: #172033;
         }
-        .hero p { margin: 0; color: #6b7280; font-size: 1rem; }
+        .hero p { margin: 0; color: #627083; font-size: 1rem; }
         .topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 1.5rem; }
-        .topline h2 { margin: 0; color: #111827; font-size: 1.2rem; }
-        a.back { font-size: .85rem; color: #5a826d; text-decoration: none; font-weight: 600; }
+        .topline h2 { margin: 0; color: #172033; font-size: 1.2rem; }
+        a.back { font-size: .85rem; color: #0f766e; text-decoration: none; font-weight: 600; }
         label {
             display: block;
             font-size: .72rem;
             letter-spacing: .08em;
             text-transform: uppercase;
-            color: #6b7280;
+            color: #627083;
             margin-bottom: 8px;
         }
         input, textarea {
             width: 100%;
             padding: 12px 14px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: #fafafa;
-            color: #111827;
+            border: 1px solid #d9e0e8;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #172033;
             font-size: .95rem;
             margin-bottom: 18px;
             font-family: inherit;
         }
         textarea { resize: vertical; min-height: 110px; }
-        input:focus, textarea:focus { outline: none; border-color: #5a826d; }
+        input:focus, textarea:focus { outline: none; border-color: #0f766e; box-shadow: 0 0 0 3px rgba(15, 118, 110, .1); }
         .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
         button {
             width: 100%;
             padding: 12px 16px;
-            background: #5a826d;
+            background: #0f766e;
             color: #fff;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: .95rem;
             font-weight: 600;
             cursor: pointer;
         }
-        button:hover { background: #486b59; }
+        button:hover { background: #0b5f59; }
         .msg.error, .msg.success { padding: 12px 14px; border-radius: 10px; font-size: .85rem; margin-bottom: 18px; }
         .msg.error { background: #fee2e2; color: #991b1b; }
         .msg.success { background: #e3f1e6; color: #356247; }

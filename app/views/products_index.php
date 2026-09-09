@@ -14,14 +14,14 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #febcdf;
+            background: #f4f6f8;
             color: #1f2937;
             min-height: 100vh;
         }
         .topbar {
-            background: #fe9bcf;
-            border-bottom: 1px solid rgba(15, 23, 42, .06);
-            padding: 18px 28px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e9ef;
+            padding: 18px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -29,7 +29,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             flex-wrap: wrap;
         }
         .brand {
-            color: #4b5563;
+            color: #172033;
             font-size: .8rem;
             font-weight: 700;
             letter-spacing: .14em;
@@ -40,20 +40,20 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             color: #1f2937;
             font-weight: 600;
             padding: 10px 14px;
-            border-radius: 999px;
+            border-radius: 8px;
             text-decoration: none;
         }
-        .nav a:hover { background: #5a826d; }
-        .page { max-width: 1100px; margin: 42px auto; padding: 0 18px 40px; }
+        .nav a:hover { background: #eef3f2; color: #0f766e; }
+        .page { max-width: 1100px; margin: 48px auto; padding: 0 20px 40px; }
         .hero, .panel {
             background: #fff;
-            border: 1px solid rgba(15, 23, 42, .06);
-            border-radius: 22px;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, .04);
+            border: 1px solid #e3e8ee;
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(23, 32, 51, .06);
         }
         .hero { padding: 30px 28px; margin-bottom: 18px; }
-        .hero h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); color: #111827; }
-        .hero p { margin: 0; color: #6b7280; font-size: 1rem; }
+        .hero h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 4vw, 2.5rem); color: #172033; letter-spacing: -.02em; }
+        .hero p { margin: 0; color: #627083; font-size: 1rem; }
         .actions { display: flex; gap: .6rem; align-items: center; }
         .btn {
             display: inline-block;
@@ -65,8 +65,8 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             border: none;
             cursor: pointer;
         }
-        .btn-primary { background: #5a826d; color: #fff; }
-        .btn-primary:hover { background: #486b59; }
+        .btn-primary { background: #0f766e; color: #fff; }
+        .btn-primary:hover { background: #0b5f59; }
         .btn-muted { background: #f3f4f6; color: #1f2937; }
         .btn-muted:hover { background: #e5e7eb; }
         .btn-danger { background: #9c4c3e; color: #fff; }
@@ -80,20 +80,20 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             overflow: hidden;
         }
         .panel-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
-        .panel-title { color: #4b5563; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+        .panel-title { color: #172033; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: .85rem 1.1rem; text-align: left; font-size: .9rem; }
         th { background: #faf7ed; color: #777363; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid #e1d8c3; }
         tbody tr:nth-child(even) { background: #fffdf8; }
         tbody tr:hover { background: #fff7f4; }
-        td { border-bottom: 1px solid #f1ece1; color: #394536; }
-        td.desc { max-width: 260px; color: #777363; }
+        td { border-bottom: 1px solid #e8edf2; color: #263247; }
+        td.desc { max-width: 260px; color: #627083; }
         td.numeric { text-align: right; white-space: nowrap; }
         .row-actions { display: flex; gap: .5rem; }
         .empty { padding: 2rem; text-align: center; color: #6b7280; }
         form.inline { display: inline; }
         @media (max-width: 600px) {
-            .topbar { padding: 16px 18px; align-items: flex-start; flex-direction: column; }
+            .topbar { padding: 16px 20px; align-items: flex-start; flex-direction: column; }
             .page { margin: 24px auto; }
             .hero, .panel { padding: 24px 20px; }
             .panel-header { align-items: flex-start; flex-direction: column; }
@@ -142,7 +142,6 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         <div class="msg error"><?= htmlspecialchars($error); ?></div>
     <?php endif; ?>
 
-    <div class="panel">
         <table>
             <thead>
                 <tr>
@@ -184,7 +183,6 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
                 <?php endif; ?>
             </tbody>
         </table>
-    </div>
 </section>
 </main>
 </body>
