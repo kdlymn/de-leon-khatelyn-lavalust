@@ -188,10 +188,15 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
     <section class="panel">
         <div class="topbar" style="background: transparent; border: 0; padding: 0 0 20px;">
             <div>
-                <div class="brand">Registered student records</div>
+                <div class="brand">Portal product records</div>
                 <div style="margin-top: 6px; color: #6b7280; font-size: .9rem;">
-                    Students who have logged in or registered are listed below.
+                    Products available in the student portal are listed below.
                 </div>
+            </div>
+            <div class="actions">
+                <?php if ($is_admin): ?>
+                    <a class="btn btn-primary" href="<?= base_url('products/create'); ?>">+ Add Product</a>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -207,29 +212,39 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                    <th>Registered</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Created</th>
+                    <?php if ($is_admin): ?><th>Actions</th><?php endif; ?>
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($students)): ?>
-                    <?php foreach ($students as $registered_student): ?>
+                <?php if (!empty($products)): ?>
+                    <?php foreach ($products as $product): ?>
                         <tr>
-                            <td>#<?= htmlspecialchars($registered_student['id'] ?? ''); ?></td>
-                            <td><?= htmlspecialchars($registered_student['username'] ?? ''); ?></td>
-                            <td class="desc"><?= htmlspecialchars($registered_student['email'] ?? ''); ?></td>
-                            <?php $registered_role = ($registered_student['role'] ?? 'user') === 'user' ? 'Student' : ($registered_student['role'] ?? ''); ?>
-                            <td><span class="role-badge <?= strtolower($registered_role) === 'admin' ? 'admin' : 'student'; ?>"><?= htmlspecialchars($registered_role); ?></span></td>
-                            <td><?= !empty($registered_student['is_active']) ? 'Active' : 'Inactive'; ?></td>
-                            <td><?= htmlspecialchars($registered_student['created_at'] ?? ''); ?></td>
+                            <td>#<?= htmlspecialchars($product['id']); ?></td>
+                            <td><?= htmlspecialchars($product['product_name']); ?></td>
+                            <td class="desc"><?= htmlspecialchars($product['description']); ?></td>
+                            <td class="numeric">₱<?= number_format((float) $product['price'], 2); ?></td>
+                            <td class="numeric"><?= htmlspecialchars($product['quantity']); ?></td>
+                            <td><?= htmlspecialchars($product['created_at'] ?? ''); ?></td>
+                            <?php if ($is_admin): ?>
+                            <td>
+                                <div class="row-actions">
+                                    <a class="btn btn-muted btn-sm" href="<?= base_url('products/edit/' . $product['id']); ?>">Edit</a>
+                                    <form class="inline" method="post" action="<?= base_url('products/delete/' . $product['id']); ?>" onsubmit="return confirm('Delete this product?');">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <tr><td colspan="6" class="empty">
-                        No students have registered yet.
+                    <tr><td colspan="<?= $is_admin ? 7 : 6; ?>" class="empty">
+                        <?= $is_admin ? 'No products yet. Click "Add Product" to create one.' : 'No products yet.'; ?>
                     </td></tr>
                 <?php endif; ?>
             </tbody>

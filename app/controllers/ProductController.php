@@ -59,9 +59,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $this->call->model('UserModel');
-        $data['student'] = $this->UserModel->find_by('id', $_SESSION['user_id'] ?? 0) ?: [];
-        $data['students'] = $this->UserModel->all();
+        $this->call->model('ProductModel');
+        $data['products'] = $this->ProductModel->all();
         $data['success'] = $_SESSION['flash_success'] ?? null;
         $data['error'] = $_SESSION['flash_error'] ?? null;
         unset($_SESSION['flash_success'], $_SESSION['flash_error']);
