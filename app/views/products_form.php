@@ -9,7 +9,7 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $is_edit ? 'Edit Product' : 'Add Product'; ?> | Student Portal</title>
+    <title><?= $is_edit ? 'Edit Product' : 'Add Product'; ?> | Product Manager</title>
     <style>
         * { box-sizing: border-box; }
         body {
@@ -115,18 +115,17 @@ $form_action = $is_edit ? base_url('products/edit/' . $product['id']) : base_url
 </head>
 <body>
 <div class="topbar">
-    <div class="brand">Student Portal</div>
+    <div class="brand">Product Manager</div>
     <nav class="nav">
-        <a href="<?= base_url('student'); ?>">Home</a>
-        <a href="<?= base_url('student/profile'); ?>">Student Profile</a>
         <a href="<?= base_url('products'); ?>">Products</a>
+        <a href="<?= base_url('logout'); ?>">Logout</a>
     </nav>
 </div>
 
 <main class="page">
 <section class="hero">
     <h1><?= $is_edit ? 'Update product' : 'Add a product'; ?></h1>
-    <p><?= $is_edit ? 'Keep the product inventory details current.' : 'Add a new item to the student portal inventory.'; ?></p>
+    <p><?= $is_edit ? 'Keep the product inventory details current.' : 'Add a new item to the product inventory.'; ?></p>
 </section>
 
 <section class="card">
