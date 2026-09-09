@@ -122,6 +122,17 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             font-weight: 700;
             overflow-wrap: anywhere;
         }
+        .role-badge {
+            display: inline-block;
+            padding: 4px 9px;
+            border-radius: 999px;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+        .role-badge.admin { background: #f7dfb0; color: #805b18; }
+        .role-badge.student { background: #e3f1e6; color: #356247; }
         .table-wrap { overflow-x: auto; }
         table { width: 100%; min-width: 780px; border-collapse: collapse; }
         th, td { padding: .9rem 1rem; text-align: left; font-size: .9rem; }
@@ -165,22 +176,13 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 <main class="page">
     <section class="hero">
         <h1>Student Portal dashboard</h1>
-        <p>Welcome back, <?= htmlspecialchars($_SESSION['username'] ?? 'student'); ?>. Here are your portal resources.</p>
-    </section>
-
-    <section class="student-account" aria-label="Logged-in student details">
-        <div class="account-item">
-            <span class="account-label">Student username</span>
-            <span class="account-value"><?= htmlspecialchars($student['username'] ?? $_SESSION['username'] ?? ''); ?></span>
-        </div>
-        <div class="account-item">
-            <span class="account-label">Registered email</span>
-            <span class="account-value"><?= htmlspecialchars($student['email'] ?? 'Not available'); ?></span>
-        </div>
-        <div class="account-item">
-            <span class="account-label">Account status</span>
-            <span class="account-value"><?= !empty($student['is_active']) ? 'Active student' : 'Inactive account'; ?></span>
-        </div>
+        <p>
+            Welcome back, <?= htmlspecialchars($_SESSION['username'] ?? 'student'); ?>.
+            You are signed in as
+            <span class="role-badge <?= $is_admin ? 'admin' : 'student'; ?>">
+                <?= $is_admin ? 'Admin' : 'Student'; ?>
+            </span>.
+        </p>
     </section>
 
     <section class="panel">
@@ -219,7 +221,8 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
                             <td>#<?= htmlspecialchars($registered_student['id'] ?? ''); ?></td>
                             <td><?= htmlspecialchars($registered_student['username'] ?? ''); ?></td>
                             <td class="desc"><?= htmlspecialchars($registered_student['email'] ?? ''); ?></td>
-                            <td><?= htmlspecialchars(($registered_student['role'] ?? 'user') === 'user' ? 'Student' : ($registered_student['role'] ?? '')); ?></td>
+                            <?php $registered_role = ($registered_student['role'] ?? 'user') === 'user' ? 'Student' : ($registered_student['role'] ?? ''); ?>
+                            <td><span class="role-badge <?= strtolower($registered_role) === 'admin' ? 'admin' : 'student'; ?>"><?= htmlspecialchars($registered_role); ?></span></td>
                             <td><?= !empty($registered_student['is_active']) ? 'Active' : 'Inactive'; ?></td>
                             <td><?= htmlspecialchars($registered_student['created_at'] ?? ''); ?></td>
                         </tr>
