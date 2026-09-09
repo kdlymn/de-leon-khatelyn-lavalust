@@ -95,6 +95,33 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             box-shadow: 0 10px 22px rgba(15, 23, 42, .03);
             overflow: hidden;
         }
+        .student-account {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+        .account-item {
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, .06);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, .03);
+        }
+        .account-label {
+            display: block;
+            color: #6b7280;
+            font-size: .72rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .account-value {
+            color: #111827;
+            font-size: 1.05rem;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
         .table-wrap { overflow-x: auto; }
         table { width: 100%; min-width: 780px; border-collapse: collapse; }
         th, td { padding: .9rem 1rem; text-align: left; font-size: .9rem; }
@@ -121,6 +148,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
             .page { margin: 24px auto; }
             .hero, .panel { padding: 24px 20px; }
             .actions { width: 100%; }
+            .student-account { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -137,7 +165,22 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
 <main class="page">
     <section class="hero">
         <h1>Student Portal dashboard</h1>
-        <p>Manage the products and resources available to students in the portal.</p>
+        <p>Welcome back, <?= htmlspecialchars($_SESSION['username'] ?? 'student'); ?>. Here are your portal resources.</p>
+    </section>
+
+    <section class="student-account" aria-label="Logged-in student details">
+        <div class="account-item">
+            <span class="account-label">Student username</span>
+            <span class="account-value"><?= htmlspecialchars($student['username'] ?? $_SESSION['username'] ?? ''); ?></span>
+        </div>
+        <div class="account-item">
+            <span class="account-label">Registered email</span>
+            <span class="account-value"><?= htmlspecialchars($student['email'] ?? 'Not available'); ?></span>
+        </div>
+        <div class="account-item">
+            <span class="account-label">Account status</span>
+            <span class="account-value"><?= !empty($student['is_active']) ? 'Active student' : 'Inactive account'; ?></span>
+        </div>
     </section>
 
     <section class="panel">
