@@ -6,7 +6,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Student Portal</title>
+    <title>Login | Product Manager</title>
     <style>
     * { box-sizing: border-box; }
         body {
@@ -23,6 +23,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }
         .brand {
             font-size: .8rem;
@@ -120,16 +121,17 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="topbar">
-    <div class="brand">Student Portal</div>
+    <div class="brand">Product Manager</div>
     <nav class="nav">
         <a href="<?= base_url('register'); ?>">Register</a>
+        <a href="<?= base_url('products'); ?>">Products</a>
     </nav>
 </div>
 
 <main class="page">
 <section class="hero">
     <h1>Welcome back</h1>
-    <p>Sign in to continue to your student portal.</p>
+    <p>Sign in to manage your product inventory.</p>
 </section>
 
 <section class="card">
