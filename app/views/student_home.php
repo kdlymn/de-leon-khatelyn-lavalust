@@ -504,6 +504,7 @@ select {
             <a href="<?=site_url('student');?>">Home</a>
             <a href="<?=site_url('student/profile');?>">Student Profile</a>
             <a href="<?=site_url('users');?>">Users Dashboard</a>
+            <a href="<?=site_url('logout');?>">Logout</a>
         </nav>
     </div>
 
