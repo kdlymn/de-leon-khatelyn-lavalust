@@ -14,7 +14,7 @@ $is_admin = (($_SESSION['role'] ?? null) === 'admin');
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #fff4f7;
+            background-color: #f9b5c7;
             background-image: radial-gradient(circle at 12% 18%, rgba(218, 117, 148, .22), transparent 24%), radial-gradient(circle at 88% 82%, rgba(234, 177, 112, .16), transparent 22%), linear-gradient(135deg, rgba(255, 255, 255, .5), transparent 52%);
             color: #1f2937;
             min-height: 100vh;
